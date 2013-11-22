@@ -104,6 +104,7 @@ Bundle 'nono/vim-handlebars'
 
  "Set the dark version of solarized
  set background=dark
+ call togglebg#map("")
  colorscheme solarized
 
  set encoding=utf-8
