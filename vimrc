@@ -147,10 +147,11 @@ let g:lightline = {
       \ 'colorscheme': 'solarized_dark',
       \ }
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_php_phpcs_args = '--standard=CSNStores'
 
 "ctags
 
-set tags=d:\code\tags
+"set tags=~/tags
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "=> Key Mappings
