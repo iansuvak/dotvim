@@ -169,3 +169,6 @@ let g:ctrlp_max_files=0
 map <leader>v :sp d:\Program\ Files\Vim\_vimrc<CR><C-W>_
 
 nmap <F8> :TagbarToggle<CR>
+
+nnoremap <space> :set hlsearch!<return>:set expandtab<return>:retab<return>
+
