@@ -41,8 +41,7 @@ endif
  " Tim Pope
 
  Bundle 'tpope/vim-repeat'
-
- Bundle 'koron/nyancat-vim'
+ Bundle 'tpope/vim-unimpaired'
 
 " Scrooloose
 
@@ -148,6 +147,7 @@ let g:lightline = {
       \ }
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_php_phpcs_args = '--standard=CSNStores'
+let g:syntastic_php_checkers =['php', 'phpcs']
 
 "ctags
 
