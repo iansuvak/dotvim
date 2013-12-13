@@ -62,6 +62,9 @@ Bundle 'ciaranm/inkpot'
 " Syntax for other languages
 Bundle 'nono/vim-handlebars'
 
+"Debug
+Bundle 'joonty/vdebug'
+
  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  " => General
  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
