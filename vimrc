@@ -1,6 +1,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ian Suvak's .vimrc
-" 
+"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vundle Stuff
@@ -31,17 +31,20 @@ endif
  "My Bundles here:
  "
  "
- 
+
  Bundle 'corntrace/bufexplorer'
  Bundle 'itchyny/lightline.vim'
  Bundle 'Raimondi/delimitMate'
  Bundle 'sjl/gundo.vim'
  Bundle 'godlygeek/tabular'
+ Bundle 'justinmk/vim-sneak'
 
  " Tim Pope
 
  Bundle 'tpope/vim-repeat'
  Bundle 'tpope/vim-unimpaired'
+ Bundle 'tpope/vim-fugitive'
+ Bundle 'tpope/vim-surround'
 
 " Scrooloose
 
@@ -53,6 +56,8 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'taglist.vim'
+Bundle 'bronson/vim-trailing-whitespace'
+Bundle 'terryma/vim-multiple-cursors'
 
 " Colors
 
@@ -149,12 +154,16 @@ let g:lightline = {
       \ 'colorscheme': 'solarized_dark',
       \ }
 let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_php_phpcs_args = '--standard=CSNStores'
 let g:syntastic_php_checkers =['php', 'phpcs']
+let g:syntastic_phpcs_conf = '--standard=CSNStores'
 
 "ctags
 
 "set tags=~/tags
+
+"VDebug
+
+let g:vdebug_options = {'port' : 9001 }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "=> Key Mappings
@@ -173,5 +182,5 @@ map <leader>v :sp d:\Program\ Files\Vim\_vimrc<CR><C-W>_
 
 nmap <F8> :TagbarToggle<CR>
 
-nnoremap <space> :set hlsearch!<return>:set expandtab<return>:retab<return>
+nnoremap <space> :set hlsearch!<return>:set expandtab<return>:retab<return>:FixWhitespace<return>
 
