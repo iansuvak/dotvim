@@ -58,6 +58,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'taglist.vim'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'laurentgoudet/vim-howdoi.git'
 
 " Colors
 
@@ -70,6 +71,7 @@ Bundle 'nono/vim-handlebars'
 "Debug
 Bundle 'joonty/vdebug'
 
+
  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  " => General
  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -80,7 +82,7 @@ Bundle 'joonty/vdebug'
  filetype plugin indent on
 
 " no .ext~ files"
- set nobackup 
+ set nobackup
  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  " => VIM User Interface
  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -89,10 +91,10 @@ Bundle 'joonty/vdebug'
  set wildmenu
 
  " Modern search
- set incsearch 
+ set incsearch
 
  " Ignore case while searching
- set ignorecase 
+ set ignorecase
 
  " Highlight search results
  set hlsearch
@@ -122,8 +124,7 @@ Bundle 'joonty/vdebug'
  endif
 
  " Use Unix as default encoding, makes it pass the Wayfair PEAR standards
- set ffs=unix,dos,mac
-
+ set ffs=unix,mac
 
  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  "=>White space
@@ -150,9 +151,27 @@ Bundle 'joonty/vdebug'
 "Lightline
 "
 set laststatus=2
+"let g:lightline = {
+      "\ 'colorscheme': 'solarized_dark',
+      "\ 'active': {
+      "\   'left': [ [ 'mode', 'paste' ],
+      "\             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      "\ },
+      "\ 'component': {
+      "\   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      "\   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'}
+      "\ }
+
 let g:lightline = {
-      \ 'colorscheme': 'solarized_dark',
+      \ 'colorscheme': 'wombat',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"⭤":""}',
+      \ },
+      \ 'separator': { 'left': '⮀', 'right': '⮂' },
+      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
       \ }
+
+"" \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_php_checkers =['php', 'phpcs']
 let g:syntastic_phpcs_conf = '--standard=CSNStores'
@@ -163,7 +182,10 @@ let g:syntastic_phpcs_conf = '--standard=CSNStores'
 
 "VDebug
 
-let g:vdebug_options = {'port' : 9001 }
+let g:vdebug_options = {
+  \ 'port' : 9001,
+  \ 'path_maps' : {"/usr/local/www/data": "/wayfair/home/isuvak/data-local"}
+  \}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "=> Key Mappings
@@ -178,7 +200,7 @@ let g:ctrlp_cmd = 'CtrlP d:\code\'
 let g:ctrlp_max_files=0
 
 " Map \v to open vimrc
-map <leader>v :sp d:\Program\ Files\Vim\_vimrc<CR><C-W>_
+map <leader>v :sp ~/.vimrc<CR><C-W>_
 
 nmap <F8> :TagbarToggle<CR>
 
