@@ -148,33 +148,49 @@ Bundle 'joonty/vdebug'
  ""Enables HTML snippets in PHP files for SnipMate
  au BufRead,BufNewFile *.php set ft=php.html
 
-"Lightline
-"
-set laststatus=2
-"let g:lightline = {
-      "\ 'colorscheme': 'solarized_dark',
-      "\ 'active': {
-      "\   'left': [ [ 'mode', 'paste' ],
-      "\             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-      "\ },
-      "\ 'component': {
-      "\   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      "\   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'}
-      "\ }
+ "Lightline
+ "
+ set laststatus=2
+ "let g:lightline = {
+ "\ 'colorscheme': 'solarized_dark',
+ "\ 'active': {
+ "\   'left': [ [ 'mode', 'paste' ],
+ "\             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+ "\ },
+ "\ 'component': {
+ "\   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+ "\   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'}
+ "\ }
 
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'component': {
-      \   'readonly': '%{&readonly?"":""}',
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
-      \ }
+ let g:lightline = {
+       \ 'colorscheme': 'wombat',
+       \ 'active': {
+       \   'left': [ [ 'mode', 'paste' ],
+       \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+       \ },
+       \ 'component': {
+       \   'readonly': '%{&readonly?"":""}',
+       \   'modified': '%{&modified?"+":"-"}'
+       \ },
+       \ 'component_function': {
+       \   'fugitive': 'MyFugitive'
+       \ },
+       \ 'separator': { 'left': '', 'right': '' },
+       \ 'subseparator': { 'left': '', 'right': '' }
+       \ }
 
-"" \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_php_checkers =['php', 'phpcs']
-let g:syntastic_phpcs_conf = '--standard=CSNStores'
+
+ function! MyFugitive()
+   if exists("*fugitive#head")
+     let _ = fugitive#head()
+     return strlen(_) ? ''._ : ''
+   endif
+   return ''
+ endfunction
+
+ let g:syntastic_javascript_checkers = ['jshint']
+ let g:syntastic_php_checkers =['php', 'phpcs']
+ let g:syntastic_phpcs_conf = '--standard=CSNStores'
 
 "ctags
 
