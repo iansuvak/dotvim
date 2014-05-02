@@ -38,6 +38,7 @@ endif
  Bundle 'sjl/gundo.vim'
  Bundle 'godlygeek/tabular'
  Bundle 'justinmk/vim-sneak'
+ Bundle 'gcmt/wildfire.vim'
 
  " Tim Pope
 
@@ -124,7 +125,7 @@ Bundle 'joonty/vdebug'
  endif
 
  " Use Unix as default encoding, makes it pass the Wayfair PEAR standards
- set ffs=unix,mac
+ set ffs=unix,mac,dos
 
  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  "=>White space
@@ -198,9 +199,14 @@ Bundle 'joonty/vdebug'
 
 "VDebug
 
+"let g:vdebug_options = {
+  "\ 'port' : 9001,
+  "\ 'path_maps' : {"/usr/local/www/data": "/wayfair/home/isuvak/data-local"}
+  "\}
 let g:vdebug_options = {
   \ 'port' : 9001,
-  \ 'path_maps' : {"/usr/local/www/data": "/wayfair/home/isuvak/data-local"}
+  \ 'break_on_open' : 0,
+  \ 'watch_window_style' : 'compact'
   \}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -209,6 +215,9 @@ let g:vdebug_options = {
 
 "Toggle NERDTree with \n
 map <leader>n :NERDTreeToggle %:p:h<CR>
+
+"Toggle Gundo wiht \u
+nmap <leader>u :GundoToggle<CR>
 
 "Ctrl-p Fuzzy-File finder maps to CTRL + p
 let g:ctrlp_map = '<c-p>'
@@ -220,5 +229,5 @@ map <leader>v :sp ~/.vimrc<CR><C-W>_
 
 nmap <F8> :TagbarToggle<CR>
 
-nnoremap <space> :set hlsearch!<return>:set expandtab<return>:retab<return>:FixWhitespace<return>
 
+nnoremap <space> :set hlsearch!<return>:set expandtab<return>:retab<return>:FixWhitespace<return>
