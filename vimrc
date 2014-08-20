@@ -94,8 +94,8 @@ Bundle 'joonty/vdebug'
  " Modern search
  set incsearch
 
- " Ignore case while searching
- set ignorecase
+ " Smart case while searching (case-sensitive if there are any caps)
+ set smartcase
 
  " Highlight search results
  set hlsearch
@@ -105,6 +105,9 @@ Bundle 'joonty/vdebug'
 
  " Show current command execution in the bottom line
  set showcmd
+
+ " Use vertical splits by default for diffs and fugitive
+ set diffopt=vertical
 
  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  " => Fonts and Style
@@ -127,7 +130,7 @@ Bundle 'joonty/vdebug'
  endif
 
  " Use Unix as default encoding, makes it pass the Wayfair PEAR standards
- set ffs=unix,mac,dos
+ set ffs=unix,mac
 
  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  "=>White space
@@ -210,6 +213,11 @@ let g:vdebug_options = {
   \ 'break_on_open' : 0,
   \ 'watch_window_style' : 'compact'
   \}
+"let g:vdebug_features = {
+  "\ 'max_depth' : 4086,
+  "\ 'max_data' : 16000,
+  "\}
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "=> Key Mappings
