@@ -62,9 +62,9 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'laurentgoudet/vim-howdoi.git'
 
 " Colors
+
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ciaranm/inkpot'
-"Bundle 'godlygeek/csapprox'
 
 " Syntax for other languages
 Bundle 'nono/vim-handlebars'
@@ -119,9 +119,7 @@ Bundle 'joonty/vdebug'
 
  "Set the dark version of solarized
  set background=dark
- "call togglebg#map("")
- set t_Co=256
- let g:solarized_termcolors=256
+ call togglebg#map("")
  colorscheme solarized
 
  set encoding=utf-8
