@@ -157,16 +157,6 @@ Bundle 'joonty/vdebug'
  "Lightline
  "
  set laststatus=2
- "let g:lightline = {
- "\ 'colorscheme': 'solarized_dark',
- "\ 'active': {
- "\   'left': [ [ 'mode', 'paste' ],
- "\             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
- "\ },
- "\ 'component': {
- "\   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
- "\   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'}
- "\ }
 
  let g:lightline = {
        \ 'colorscheme': 'wombat',
@@ -202,22 +192,11 @@ Bundle 'joonty/vdebug'
 
 "set tags=~/tags
 
-"VDebug
-
-"let g:vdebug_options = {
-  "\ 'port' : 9001,
-  "\ 'path_maps' : {"/usr/local/www/data": "/wayfair/home/isuvak/data-local"}
-  "\}
 let g:vdebug_options = {
   \ 'port' : 9001,
   \ 'break_on_open' : 0,
   \ 'watch_window_style' : 'compact'
   \}
-"let g:vdebug_features = {
-  "\ 'max_depth' : 4086,
-  "\ 'max_data' : 16000,
-  "\}
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "=> Key Mappings
