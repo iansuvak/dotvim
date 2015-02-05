@@ -68,6 +68,8 @@ Bundle 'ciaranm/inkpot'
 
 " Syntax for other languages
 Bundle 'nono/vim-handlebars'
+Bundle 'fatih/vim-go'
+Bundle 'wting/rust.vim'
 
 "Debug
 Bundle 'joonty/vdebug'
