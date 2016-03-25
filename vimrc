@@ -64,6 +64,7 @@ Bundle 'laurentgoudet/vim-howdoi.git'
 " Colors
 
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'chriskempson/base16-vim'
 Bundle 'ciaranm/inkpot'
 
 " Syntax for other languages
@@ -122,10 +123,9 @@ Bundle 'joonty/vdebug'
  "Enable syntax highlighting
  syntax enable
 
- "Set the dark version of solarized
  set background=dark
- call togglebg#map("")
- colorscheme solarized
+ let base16colorspace=256  " Access colors present in 256 colorspace
+ colorscheme base16-ocean
 
  set encoding=utf-8
 
