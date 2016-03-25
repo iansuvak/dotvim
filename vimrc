@@ -70,6 +70,11 @@ Bundle 'ciaranm/inkpot'
 Bundle 'nono/vim-handlebars'
 Bundle 'fatih/vim-go'
 Bundle 'wting/rust.vim'
+Bundle 'nvie/vim-flake8'
+Bundle 'mitsuhiko/vim-jinja'
+
+" silly stuff
+Bundle 'koron/nyancat-vim'
 
 "Debug
 Bundle 'joonty/vdebug'
@@ -139,10 +144,14 @@ Bundle 'joonty/vdebug'
  " Don't wrap lines
  set nowrap
 
- " 1 tab = 4 spaces
+ " 1 tab = 2 spaces
  set tabstop=2
  set softtabstop=2
  set shiftwidth=2
+
+ "except for Python use 4
+ autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
+ autocmd FileType sql setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
  " Use spaces instead of tab characters
  set expandtab
@@ -186,7 +195,8 @@ Bundle 'joonty/vdebug'
 
  let g:syntastic_javascript_checkers = ['jshint']
  let g:syntastic_php_checkers =['php', 'phpcs']
- let g:syntastic_phpcs_conf = '--standard=CSNStores'
+ let g:syntastic_phpcs_conf = '--standard="CSNStores"'
+ let g:syntastic_php_phpcs_args = '--standard="CSNStores"'
 
 "ctags
 
@@ -217,6 +227,8 @@ let g:ctrlp_max_files=0
 map <leader>v :sp ~/.vimrc<CR><C-W>_
 
 nmap <F8> :TagbarToggle<CR>
+
+map <leader>c :colorscheme default<CR>
 
 
 nnoremap <space> :set hlsearch!<return>:set expandtab<return>:retab<return>:FixWhitespace<return>
