@@ -125,13 +125,13 @@ Bundle 'joonty/vdebug'
 
  set background=dark
  let base16colorspace=256  " Access colors present in 256 colorspace
- colorscheme base16-ocean
+ colorscheme base16-oceanicnext
 
  set encoding=utf-8
 
  "" Set font for gVIM
  if has('gui_running')
-   set guifont=Anonymous_Pro:h11:cANSI
+   set guifont=Anonymous_Pro:h15:cANSI
  endif
 
  " Use Unix as default encoding, makes it pass the Wayfair PEAR standards
@@ -153,6 +153,7 @@ Bundle 'joonty/vdebug'
  autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
  autocmd FileType sql setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
+ au BufNewFile,BufRead *.[hv]ql set filetype=sql
  " Use spaces instead of tab characters
  set expandtab
 
